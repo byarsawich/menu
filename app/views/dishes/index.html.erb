@@ -13,12 +13,13 @@
 
   <tbody>
     <% @courses.each do |course| %>
+      <% course_name = course[0].course_name %>
       <tr>
-        <td colspan="3"><%= course[0].course_name %></td>
+        <td colspan="3"><%= course_name %></td>
       </tr>
       <tr>
         <td colspan="3">
-          <%= link_to 'Create New Dish', new_dish_path(course_id: course[0].course_id) %>
+          <%= link_to "Create New #{course_name.singularize}", new_dish_path(course_id: course[0].course_id) %>
         </td>
       </tr>
       <% course.each do |dish| %>
