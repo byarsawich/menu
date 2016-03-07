@@ -15,3 +15,9 @@ Course.create(name: "Burgers")
 Course.create(name: "Entrees")
 Course.create(name: "Desserts")
 Course.create(name: "Drinks")
+
+if Rails.env.development?
+  20.times do
+    Dish.create(course_id: rand(8) + 1, name: Faker::Commerce.product_name, price: Faker::Commerce.price, description: Faker::Hipster.sentence)
+  end
+end
