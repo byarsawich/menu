@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   course_id: 1
   price: 9.99
-  name: MyString
-  description: MyText
+  name: Fries
+  description: Pieces of potatos fried in oil.
 
 two:
-  course_id: 1
+  id: 2
+  course_id: 3
   price: 9.99
-  name: MyString
-  description: MyText
+  name: Ceaser Salad
+  description: Hail the emperor of salads.
