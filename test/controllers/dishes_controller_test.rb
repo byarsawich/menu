@@ -12,8 +12,9 @@ class DishesControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, course_id: @dish.course_id
     assert_response :success
+    assert_not_nil assigns(:course_name)
   end
 
   test "should create dish" do

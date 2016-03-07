@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :course_name %><br>
-    <%= f.number_field :course_name %>
+    <%= f.text_field :course_name, {readonly: true, value: @course_name} %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
@@ -30,4 +30,7 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <div class="actions">
+    <%= link_to 'Delete Dish', @dish, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <div>
 <% end %>
