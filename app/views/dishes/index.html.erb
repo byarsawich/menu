@@ -15,7 +15,8 @@
     <% @courses.each do |course| %>
       <% course_name = course[0].course_name %>
       <tr>
-        <td colspan="3"><%= course_name %></td>
+        <td><%= course_name %></td>
+        <td colspan="2"><%= image_tag asset_url("#{course_name.singularize.downcase}.jpg"), class: "course-image" %></td>
       </tr>
       <tr>
         <td colspan="3">

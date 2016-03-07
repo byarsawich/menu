@@ -1,2 +1,28 @@
-<h1>Menus#index</h1>
-<p>Find me in app/views/menus/index.html.erb</p>
+<h1>Listing Dishes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <% course_name = course[0].course_name %>
+      <tr>
+        <td><%= course_name %></td>
+        <td colspan="2"><%= image_tag asset_url("#{course_name.singularize.downcase}.jpg"), class: "course-image" %></td>
+      </tr>
+      <% course.each do |dish| %>
+        <tr>
+          <td><%= dish.name%></td>
+          <td><%= dish.price %></td>
+          <td><%= dish.description %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

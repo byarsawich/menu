@@ -1,6 +1,5 @@
 class DishesController < ApplicationController
   before_action :set_dish, only: [:show, :edit, :update, :destroy]
-  before_action :set_course_name, only: [:show, :edit]
 
   # GET /dishes
   # GET /dishes.json
@@ -64,10 +63,6 @@ class DishesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_dish
       @dish = Dish.find(params[:id])
-    end
-
-    def set_course_name
-
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
