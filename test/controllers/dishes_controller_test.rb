@@ -26,7 +26,7 @@ class DishesControllerTest < ActionController::TestCase
 
   test "should show dish" do
     get :show, id: @dish
-    assert_response :success
+    assert_redirected_to edit_dish_path(assigns(:dish))
   end
 
   test "should get edit" do

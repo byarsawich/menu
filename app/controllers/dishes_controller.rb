@@ -10,6 +10,7 @@ class DishesController < ApplicationController
   # GET /dishes/1
   # GET /dishes/1.json
   def show
+    redirect_to edit_dish_path(params[:id])
   end
 
   # GET /dishes/new
