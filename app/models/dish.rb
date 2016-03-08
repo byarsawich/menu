@@ -6,7 +6,7 @@ class Dish < ActiveRecord::Base
   validates :price, presence: {message: "You must enter a price for the dish"}
 
   def course_name
-    course.name
+    course && course.name
   end
 
   def course_name=(name)

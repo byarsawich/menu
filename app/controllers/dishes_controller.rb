@@ -15,13 +15,11 @@ class DishesController < ApplicationController
 
   # GET /dishes/new
   def new
-    @dish = Dish.new
-    @course_name = Course.find(params[:course_id]).name
+    @dish = Dish.new(course_id: params[:course_id])
   end
 
   # GET /dishes/1/edit
   def edit
-    @course_name = Dish.find(params[:id]).course_name
   end
 
   # POST /dishes
