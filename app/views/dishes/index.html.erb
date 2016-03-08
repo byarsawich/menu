@@ -13,17 +13,17 @@
 
   <tbody>
     <% @courses.each do |course| %>
-      <% course_name = course[0].course_name %>
+      <% course_name = course.name %>
       <tr>
         <td class="text-center"><%= course_name %></td>
         <td colspan="2"><%= image_tag asset_url("#{course_name.singularize.downcase}.jpg"), class: "course-image" %></td>
       </tr>
       <tr>
         <td colspan="3">
-          <%= link_to "Create New #{course_name.singularize}", new_dish_path(course_id: course[0].course_id), class: "btn btn-primary" %>
+          <%= link_to "Create New #{course_name.singularize}", new_dish_path(course_id: course.id), class: "btn btn-primary" %>
         </td>
       </tr>
-      <% course.each do |dish| %>
+      <% course.get_dishes_by_course.each do |dish| %>
         <tr>
           <td><%= link_to dish.name, dish %></td>
           <td><%= number_to_currency(dish.price) %></td>

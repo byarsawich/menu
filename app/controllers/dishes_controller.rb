@@ -4,7 +4,7 @@ class DishesController < ApplicationController
   # GET /dishes
   # GET /dishes.json
   def index
-    @courses = Course.get_dishes_by_course
+    @courses = Course.all
   end
 
   # GET /dishes/1
