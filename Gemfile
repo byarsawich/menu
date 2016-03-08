@@ -42,6 +42,7 @@ group :development, :test do
   gem 'sqlite3'
 
   gem 'faker'
+  gem 'railroady'
 end
 
 group :development do

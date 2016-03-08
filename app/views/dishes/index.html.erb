@@ -2,7 +2,7 @@
 
 <h1>Listing Dishes</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Name</th>
@@ -15,18 +15,18 @@
     <% @courses.each do |course| %>
       <% course_name = course[0].course_name %>
       <tr>
-        <td><%= course_name %></td>
+        <td class="text-center"><%= course_name %></td>
         <td colspan="2"><%= image_tag asset_url("#{course_name.singularize.downcase}.jpg"), class: "course-image" %></td>
       </tr>
       <tr>
         <td colspan="3">
-          <%= link_to "Create New #{course_name.singularize}", new_dish_path(course_id: course[0].course_id) %>
+          <%= link_to "Create New #{course_name.singularize}", new_dish_path(course_id: course[0].course_id), class: "btn btn-primary" %>
         </td>
       </tr>
       <% course.each do |dish| %>
         <tr>
           <td><%= link_to dish.name, dish %></td>
-          <td><%= dish.price %></td>
+          <td><%= number_to_currency(dish.price) %></td>
           <td><%= dish.description %></td>
         </tr>
       <% end %>

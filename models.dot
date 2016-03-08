@@ -1,0 +1,6 @@
+digraph models_diagram {
+	graph[overlap=false, splines=true, bgcolor="none"]
+	"Course" [shape=Mrecord, label="{Course|id :INTEGER\lname :varchar\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Dish" [shape=Mrecord, label="{Dish|name :varchar\lcourse_id :integer\lprice :decimal(5,2)\lid :INTEGER\ldescription :text\lcreated_at :datetime\lupdated_at :datetime\l}"]
+	"Course" -> "Dish" [arrowtail=odot, arrowhead=crow, dir=both color="#48322A"]
+}
